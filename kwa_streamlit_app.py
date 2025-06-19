@@ -66,5 +66,4 @@ if st.button("Reset"):
 
 # Tooltip info
 with st.expander("ℹ️ Bill Calculation Info"):
-    st.info("No water charges will be collected from BPL families who consume up to15,000 litres per month.\n
-For flats fixed charges will be @ Rs.55.13/- per dwelling unit.")
+    st.info("No water charges will be collected from BPL families who consume up to15,000 litres per month.For flats fixed charges will be @ Rs.55.13/- per dwelling unit.")
