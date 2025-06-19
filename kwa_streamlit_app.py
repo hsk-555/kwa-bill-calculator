@@ -31,8 +31,13 @@ duration = st.selectbox("Select billing duration", ["1 Month", "2 Months"])
 months = 1 if duration == "1 Month" else 2
 
 # Reading inputs
-prev_read = st.text_input("🔹 Previous Reading (units)", "")
-curr_read = st.text_input("🔹 Current Reading (units)", "")
+if "prev_read" not in st.session_state:
+    st.session_state.prev_read = ""
+if "curr_read" not in st.session_state:
+    st.session_state.curr_read = ""
+
+prev_read = st.text_input("🔹 Previous Reading (units)", st.session_state.prev_read, key="prev_read")
+curr_read = st.text_input("🔹 Current Reading (units)", st.session_state.curr_read, key="curr_read")
 
 if st.button("Calculate Bill"):
     if not prev_read or not curr_read:
@@ -62,8 +67,9 @@ if st.button("Calculate Bill"):
 
 # Reset
 if st.button("Reset"):
+    st.session_state.prev_read = ""
+    st.session_state.curr_read = ""
     st.experimental_rerun()
-
 # Tooltip info
 with st.expander("ℹ️ Bill Calculation Info"):
     st.info("No water charges will be collected from BPL families who consume up to15,000 litres per month.For flats fixed charges will be @ Rs.55.13/- per dwelling unit.")
