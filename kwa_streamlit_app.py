@@ -55,7 +55,7 @@ if st.button("Calculate Bill"):
 
                 bill = calculate_kwa_bill(litres)
 
-                st.success(f"✅ Total Consumption: **{int(litres)} L**")
+                st.markdown(f"✅ Total Consumption: **{int(litres)} L**")
                 st.success(f"💵 **Bill Amount: ₹{bill}**")
         except ValueError:
             st.error("Please enter valid numeric values.")
