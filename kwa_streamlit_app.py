@@ -55,8 +55,8 @@ if st.button("Calculate Bill"):
 
                 bill = calculate_kwa_bill(litres)
 
-                st.markdown(f"✅ Total Consumption: **{int(litres)} L**")
-                st.success(f"💵 **Bill Amount: ₹{bill}**")
+                st.markdown(f"Total Consumption is below **{int(litres)} L**")
+                st.success(f"✅ **Bill Amount is ₹{bill} Rs**")
         except ValueError:
             st.error("Please enter valid numeric values.")
 
@@ -67,3 +67,7 @@ if st.button("Reset"):
 # Tooltip info
 with st.expander("ℹ️ Bill Calculation Info"):
     st.info("No water charges will be collected from BPL families who consume up to15,000 litres per month.For flats fixed charges will be @ Rs.55.13/- per dwelling unit.")
+with st.expander("© Copyright 2025"):
+    st.info("© 2025 Harikrishna. All rights reserved. Unauthorized use or duplication of this code or content is strictly prohibited.")
+
+#© 2025 Harikrishna. All rights reserved. Unauthorized use or duplication of this code or content is strictly prohibited.
